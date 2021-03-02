@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 
 @Immutable
 @Parcelize
-data class DogDetailKey(val dog: Dog): ComposeKey() {
+data class DogDetailKey(val dog: Dog) : ComposeKey() {
     @Composable
     override fun ScreenComposable(modifier: Modifier) {
         DogDetailScreen(dog = dog)

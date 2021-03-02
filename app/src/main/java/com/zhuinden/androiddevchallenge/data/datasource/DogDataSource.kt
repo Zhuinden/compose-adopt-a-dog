@@ -3,7 +3,6 @@ package com.zhuinden.androiddevchallenge.data.datasource
 import com.zhuinden.androiddevchallenge.data.models.Dog
 import io.reactivex.Scheduler
 import io.reactivex.Single
-import io.reactivex.android.schedulers.AndroidSchedulers
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
@@ -1083,7 +1082,7 @@ class DogDataSource(
             "https://images.dog.ceo/breeds/schipperke/n02104365_6800.jpg",
             "https://images.dog.ceo/breeds/malamute/n02110063_13126.jpg",
             "https://images.dog.ceo/breeds/entlebucher/n02108000_755.jpg",
-            
+
             )
     }
 }

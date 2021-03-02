@@ -1,7 +1,6 @@
 package com.zhuinden.androiddevchallenge.features.doglist
 
 import androidx.compose.foundation.lazy.LazyListState
-import androidx.compose.runtime.saveable.SaverScope
 import com.jakewharton.rxrelay2.BehaviorRelay
 import com.zhuinden.androiddevchallenge.data.datasource.DogDataSource
 import com.zhuinden.androiddevchallenge.data.models.Dog

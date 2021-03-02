@@ -10,7 +10,7 @@ data class Dog(
     val determinedSex: DeterminedSex,
     val breed: String,
     val imageUrl: String,
-): Parcelable {
+) : Parcelable {
     enum class DeterminedSex {
         MALE,
         FEMALE;

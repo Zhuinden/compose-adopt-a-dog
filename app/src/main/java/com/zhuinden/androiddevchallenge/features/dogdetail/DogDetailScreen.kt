@@ -1,8 +1,11 @@
 package com.zhuinden.androiddevchallenge.features.dogdetail
 
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.CircularProgressIndicator
@@ -16,11 +19,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import coil.request.ImageRequest
 import com.zhuinden.androiddevchallenge.core.models.contentDescription
-import com.zhuinden.androiddevchallenge.core.ui.theme.typography
 import com.zhuinden.androiddevchallenge.data.models.Dog
 import dev.chrisbanes.accompanist.coil.CoilImage
 import okhttp3.HttpUrl
-import java.util.*
+import java.util.Locale
 
 @Composable
 fun DogDetailScreen(dog: Dog) {
