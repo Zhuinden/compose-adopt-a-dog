@@ -81,7 +81,7 @@ dependencies {
     implementation 'com.github.Zhuinden.simple-stack-extensions:navigator-ktx:2.1.0'
     implementation 'com.github.Zhuinden.simple-stack-extensions:services:2.1.0'
     implementation 'com.github.Zhuinden.simple-stack-extensions:services-ktx:2.1.0'
-    implementation "com.github.Zhuinden:simple-stack-compose-integration:0.1.0"
+    implementation "com.github.Zhuinden:simple-stack-compose-integration:0.1.1"
 
     implementation 'dev.chrisbanes.accompanist:accompanist-coil:0.6.1'
 

@@ -28,14 +28,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.zhuinden.androiddevchallenge.core.ui.theme.MyTheme
 import com.zhuinden.androiddevchallenge.features.doglist.DogListKey
 import com.zhuinden.simplestack.History
+import com.zhuinden.simplestack.SimpleStateChanger
 import com.zhuinden.simplestack.navigator.Navigator
 import com.zhuinden.simplestackcomposeintegration.core.BackstackProvider
-import com.zhuinden.simplestackcomposeintegration.core.ComposeStateChanger
+import com.zhuinden.simplestackcomposeintegration.core.SimpleComposeStateChanger
 import com.zhuinden.simplestackextensions.navigatorktx.androidContentFrame
 import com.zhuinden.simplestackextensions.services.DefaultServiceProvider
 
 class MainActivity : AppCompatActivity() {
-    private val composeStateChanger = ComposeStateChanger()
+    private val composeStateChanger = SimpleComposeStateChanger()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         val backstack = Navigator.configure()
             .setGlobalServices(app.globalServices)
             .setScopedServices(DefaultServiceProvider())
-            .setStateChanger(composeStateChanger)
+            .setStateChanger(SimpleStateChanger(composeStateChanger))
             .install(this, androidContentFrame, History.of(DogListKey()))
 
         setContent {

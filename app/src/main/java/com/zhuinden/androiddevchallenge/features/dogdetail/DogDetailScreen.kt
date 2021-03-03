@@ -15,6 +15,9 @@
  */
 package com.zhuinden.androiddevchallenge.features.dogdetail
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -34,6 +37,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import coil.request.ImageRequest
 import com.zhuinden.androiddevchallenge.core.models.contentDescription
+import com.zhuinden.androiddevchallenge.core.ui.theme.purple200
+import com.zhuinden.androiddevchallenge.core.ui.theme.purple50
+import com.zhuinden.androiddevchallenge.core.ui.theme.shapes
 import com.zhuinden.androiddevchallenge.data.models.Dog
 import dev.chrisbanes.accompanist.coil.CoilImage
 import okhttp3.HttpUrl
@@ -45,7 +51,9 @@ fun DogDetailScreen(dog: Dog) {
 
     val scrollState = rememberScrollState()
 
-    Column(modifier = Modifier.verticalScroll(state = scrollState)) {
+    Column(
+        modifier = Modifier.verticalScroll(state = scrollState)
+    ) {
         CoilImage(
             modifier = Modifier
                 .fillMaxWidth()
@@ -57,27 +65,34 @@ fun DogDetailScreen(dog: Dog) {
             loading = { CircularProgressIndicator() },
         )
 
-        Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp)) {
-            Text(
-                text = dog.name,
-                style = MaterialTheme.typography.h2,
-            )
+        Box(
+            modifier = Modifier
+                .padding(start = 16.dp, end = 16.dp, top = 24.dp, bottom = 24.dp)
+                .border(2.dp, purple200, shapes.medium)
+                .background(purple50, shapes.medium)
+        ) {
+            Column(modifier = Modifier.padding(16.dp)) {
+                Text(
+                    text = dog.name,
+                    style = MaterialTheme.typography.h2,
+                )
 
-            Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(8.dp))
 
-            Text(
-                text = "${dog.age}, ${dog.determinedSex.name.toLowerCase(Locale.getDefault())}",
-                style = MaterialTheme.typography.h3,
-            )
+                Text(
+                    text = "${dog.age}, ${dog.determinedSex.name.toLowerCase(Locale.getDefault())}",
+                    style = MaterialTheme.typography.h3,
+                )
 
-            Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(8.dp))
 
-            Text(
-                text = "${dog.name} is a cute ${dog.breed} and is waiting to be adopted, taken home, handled with care and treated with love. You should definitely do your best to adopt ${dog.name}!",
-                style = MaterialTheme.typography.body1,
-            )
+                Text(
+                    text = "${dog.name} is a cute ${dog.breed} and is waiting to be adopted, taken home, handled with care and treated with love. You should definitely do your best to adopt ${dog.name}!",
+                    style = MaterialTheme.typography.body1,
+                )
 
-            Spacer(modifier = Modifier.height(32.dp))
+                Spacer(modifier = Modifier.height(24.dp))
+            }
         }
     }
 }
