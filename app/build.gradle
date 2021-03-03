@@ -8,7 +8,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "com.example.androiddevchallenge"
+        applicationId "com.zhuinden.androiddevchallenge"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1

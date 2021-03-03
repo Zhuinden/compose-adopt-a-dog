@@ -17,7 +17,7 @@ package com.zhuinden.androiddevchallenge
 
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.zhuinden.androiddevchallenge.MainActivity
+import com.zhuinden.androiddevchallenge.app.MainActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
